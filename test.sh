@@ -1,1 +1,1 @@
-echo "running in master branch"
+echo "running in dev branch"
