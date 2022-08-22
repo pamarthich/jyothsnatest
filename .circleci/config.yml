@@ -5,7 +5,8 @@ jobs:
         - image: alpine:3.7
     steps:
       - checkout
-  runmake:
+  runmake-1:
+    working_directory: makeme
     docker:
         - image: ubuntu
     steps:
@@ -18,14 +19,42 @@ jobs:
       - run:
           name: "run make"
           command: |
-            cd makeme
-            echo $(circleci tests glob "Makefile")
-            circleci tests glob "Makefile" | circleci tests split --split-by=timings
+             make one
+  runmake-2:
+    working_directory: makeme
+    docker:
+        - image: ubuntu
+    steps:
+      - checkout
+      - run:
+          name: "install make"
+          command: |
+            apt-get update
+            apt-get install make -y
+      - run:
+          name: "run make"
+          command: |
+            make two
+  runmake-3:
+    working_directory: makeme
+    docker:
+        - image: ubuntu
+    steps:
+      - checkout
+      - run:
+          name: "install make"
+          command: |
+            apt-get update
+            apt-get install make -y
+      - run:
+          name: "run make"
+          command: |
+            make three
 
 workflows:
   paralellWorkflow:
     jobs:
       - initializeCode
-      - runmake:
-           requires:
-              - initializeCode
+      - runmake-1
+      - runmake-2
+      - runmake-3
