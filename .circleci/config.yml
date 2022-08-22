@@ -19,7 +19,9 @@ jobs:
           name: "run make"
           command: |
             cd makeme
-            make
+            echo $(circleci tests glob "Makefile")
+            circleci tests glob "Makefile" | circleci tests split --split-by=timings
+
 workflows:
   paralellWorkflow:
     jobs:
