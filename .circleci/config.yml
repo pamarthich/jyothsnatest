@@ -11,6 +11,11 @@ jobs:
     steps:
       - checkout
       - run:
+          name: "install make"
+          command: |
+            apt-get update
+            apt-get install make -y
+      - run:
           name: "run make"
           command: |
             cd makeme
