@@ -18,4 +18,6 @@ workflows:
   paralellWorkflow:
     jobs:
       - initializeCode
-      - runmake
+      - runmake:
+           requires:
+              - initializeCode
