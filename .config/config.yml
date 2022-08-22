@@ -1,0 +1,17 @@
+version: 2.1
+jobs:
+  initilaizeCode:
+    docker:
+        - image: alpine:3.7
+    steps:
+      - checkout
+  runmake:
+    docker:
+        - image: alpine:3.7
+    steps:
+      - run:
+          name: "run make"
+          command: |
+            cd makeme
+            make
+
