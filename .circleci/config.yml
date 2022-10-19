@@ -52,6 +52,7 @@ jobs:
             at-get install make -y
       - run:
           name: "run make"
+          when: always
           command: |
             cd makeme
             pwd
