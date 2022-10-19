@@ -48,7 +48,7 @@ jobs:
       - run:
           name: "install make"
           command: |
-            at-get update
+            apt-get update
             at-get install make -y
       - run:
           name: "run make"
