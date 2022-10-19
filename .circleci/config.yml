@@ -60,6 +60,7 @@ jobs:
             make three
       - run:
           name: "Cleaning"
+          when: always
           command: echo "cleaning stuff"
 
 
