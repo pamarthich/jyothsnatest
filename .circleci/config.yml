@@ -58,6 +58,10 @@ jobs:
             pwd
             ls
             make three
+      - run:
+          name: "Cleaning"
+          command: echo "cleaning stuff"
+
 
 workflows:
   paralellWorkflow:
