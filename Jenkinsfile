@@ -26,8 +26,6 @@ pipeline {
                 echo "$env.name"
                 echo "$env.BRANCH"
             }
-        }
-        stage('loadreleaseenv'){
             when {
                 expression {
                     return env.BRANCH_NAME.contains('releas')
@@ -40,6 +38,9 @@ pipeline {
                 echo "$env.BRANCH"
             }
         }
+        // stage('loadreleaseenv'){
+            
+        // }
 
     }
 }
