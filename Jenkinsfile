@@ -17,7 +17,7 @@ pipeline {
                 sh ("./test.sh")
             }
         }
-        stage('loadenv'){
+        stage('loadmainenv'){
             when {
                 branch main
             }
@@ -27,7 +27,7 @@ pipeline {
                 echo "$env.BRANCH"
             }
         }
-        stage('loadenv'){
+        stage('loadreleaseenv'){
             when {
                 branch release
             }
