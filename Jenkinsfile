@@ -29,7 +29,10 @@ pipeline {
         }
         stage('loadreleaseenv'){
             when {
-                branch 'release'
+                expression {
+                    return env.BRANCH_NAME.contains('releas')
+                }
+                // branch 'release'
             }
             steps {
                 load 'dev_env.groovy'
