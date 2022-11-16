@@ -19,7 +19,7 @@ pipeline {
         }
         stage('loadmainenv'){
             when {
-                branch main
+                branch 'main'
             }
             steps {
                 load 'main_env.groovy'
@@ -29,7 +29,7 @@ pipeline {
         }
         stage('loadreleaseenv'){
             when {
-                branch release
+                branch 'release'
             }
             steps {
                 load 'dev_env.groovy'
