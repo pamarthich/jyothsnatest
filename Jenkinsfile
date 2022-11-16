@@ -17,5 +17,26 @@ pipeline {
                 sh ("./test.sh")
             }
         }
+        stage('loadenv'){
+            when {
+                branch main
+            }
+            steps {
+                load 'main_env.groovy'
+                echo "$env.name"
+                echo "$env.BRANCH"
+            }
+        }
+        stage('loadenv'){
+            when {
+                branch dev
+            }
+            steps {
+                load 'dev_env.groovy'
+                echo "$env.name"
+                echo "$env.BRANCH"
+            }
+        }
+
     }
 }
