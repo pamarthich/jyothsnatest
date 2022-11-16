@@ -29,7 +29,7 @@ pipeline {
         }
         stage('loadenv'){
             when {
-                branch dev
+                branch release
             }
             steps {
                 load 'dev_env.groovy'
