@@ -82,3 +82,4 @@ workflows:
       - runmake-1
       - runmake-2
       - runmake-3
+      - getEnv
