@@ -49,7 +49,7 @@ jobs:
           name: "install make"
           command: |
             apt-get update
-            at-get install make -y
+            apt-get install make -y
       - run:
           name: "run make"
           when: always
@@ -57,7 +57,7 @@ jobs:
             cd makeme
             pwd
             ls
-            #make three
+            make three
       - run:
           name: "Cleaning"
           when: always
