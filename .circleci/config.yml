@@ -57,7 +57,7 @@ jobs:
             cd makeme
             pwd
             ls
-            make three
+            #make three
       - run:
           name: "Cleaning"
           when: always
