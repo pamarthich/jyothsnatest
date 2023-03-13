@@ -1,5 +1,16 @@
 version: 2.1
+parameters:
+    mynamingo:
+       type: string
+       default: "krishna"
 jobs:
+  getEnv:
+    docker:
+        - image: alpine:3.7
+    steps:
+      - run:
+          name: Get Parametrs from previous pipeline
+          command: echo << pipeline.parameters.mynamingo >>
   initializeCode:
     docker:
         - image: alpine:3.7
