@@ -35,7 +35,7 @@ jobs:
             ls
             ls -lth
             chmod +x test.sh
-            ./test.sh
+            sh test.sh
           environment:
             name:  << pipeline.parameters.mynamingo >>
             luffy: << pipeline.parameters.pirateking >>
