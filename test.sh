@@ -1,3 +1,4 @@
+#!/bin/bash
 # DIRPATH=$1
 # FILENAME=$2
 
