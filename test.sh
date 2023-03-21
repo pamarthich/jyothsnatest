@@ -5,6 +5,6 @@
 echo "running in master branch"
 echo "Testing CI/CD"
 
-echo $name
-echo $luffy
-echo $beast
+echo "Author name is: $name"
+echo "Pirate King Name is: $luffy"
+echo "The beast pirates own by: $beast"
