@@ -23,7 +23,8 @@ jobs:
       - run:
           name: Read from file
           command: |
-            bash test.sh
+            chmod +x test.sh
+            ./test.sh
           environment:
             name:  << pipeline.parameters.mynamingo >>
             luffy: << pipeline.parameters.pirateking >>
