@@ -20,6 +20,14 @@ jobs:
             echo << pipeline.parameters.mynamingo >>
             echo << pipeline.parameters.pirateking >>
             echo << pipeline.parameters.yonko >>
+      - run:
+          name: Read from file
+          command: |
+            bash test.sh
+          environment:
+            name:  << pipeline.parameters.mynamingo >>
+            luffy: << pipeline.parameters.pirateking >>
+            beast: << pipeline.parameters.yonko >>
   initializeCode:
     docker:
         - image: alpine:3.7
