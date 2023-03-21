@@ -17,6 +17,12 @@ jobs:
     steps:
       - checkout
       - run:
+          name: list content
+          command: |
+             pwd
+             ls
+             ls -lth
+      - run:
           name: Get Parametrs from previous pipeline
           command: |
             echo << pipeline.parameters.mynamingo >>
@@ -25,6 +31,9 @@ jobs:
       - run:
           name: Read from file
           command: |
+            pwd
+            ls
+            ls -lth
             chmod +x test.sh
             ./test.sh
           environment:
