@@ -3,6 +3,12 @@ parameters:
     mynamingo:
        type: string
        default: "krishna"
+    pirateking:
+       type: string
+       default: "Roronoa Zoro"
+    yonko:
+       type: string
+       default: "Onigashima"
 jobs:
   getEnv:
     docker:
@@ -10,7 +16,10 @@ jobs:
     steps:
       - run:
           name: Get Parametrs from previous pipeline
-          command: echo << pipeline.parameters.mynamingo >>
+          command: |
+            echo << pipeline.parameters.mynamingo >>
+            echo << pipeline.parameters.pirateking >>
+            echo << pipeline.parameters.yonko >>
   initializeCode:
     docker:
         - image: alpine:3.7
