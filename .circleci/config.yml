@@ -10,10 +10,12 @@ parameters:
        type: string
        default: "Onigashima"
 jobs:
+  
   getEnv:
     docker:
         - image: alpine:3.7
     steps:
+      - checkout
       - run:
           name: Get Parametrs from previous pipeline
           command: |
