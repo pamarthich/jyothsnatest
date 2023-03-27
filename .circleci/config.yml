@@ -19,6 +19,7 @@ jobs:
     resource_class: medium
     steps:
       - checkout
+      
       - run:
           name: list content
           command: |
@@ -31,7 +32,7 @@ jobs:
             echo << pipeline.parameters.mynamingo >>
             echo << pipeline.parameters.pirateking >>
             echo << pipeline.parameters.yonko >>
-            docker ps
+           
       - run:
           name: Read from file
           command: |
@@ -44,6 +45,7 @@ jobs:
             name:  << pipeline.parameters.mynamingo >>
             luffy: << pipeline.parameters.pirateking >>
             beast: << pipeline.parameters.yonko >>
+             docker run -dit -e $beast -e $luffy nginx:latest 
   initializeCode:
     docker:
         - image: alpine:3.7
