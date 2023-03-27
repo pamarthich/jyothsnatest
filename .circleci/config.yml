@@ -28,6 +28,7 @@ jobs:
             echo << pipeline.parameters.mynamingo >>
             echo << pipeline.parameters.pirateking >>
             echo << pipeline.parameters.yonko >>
+            docker ps
       - run:
           name: Read from file
           command: |
