@@ -41,7 +41,7 @@ jobs:
             ls -lth
             chmod +x test.sh
             sh test.sh
-            docker run -dit -e $beast -e $luffy --name nginx nginx:latest
+            docker run -dit -e $beast -e $luffy --name nginx nginx
             docker cp test.sh nginx:/tmp/
             docker exec nginx -c 'bash /tmp/test.sh'
           environment:
