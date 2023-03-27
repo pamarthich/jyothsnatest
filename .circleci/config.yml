@@ -12,8 +12,9 @@ parameters:
 jobs:
   
   getEnv:
-    docker:
-        - image: alpine:3.7
+#     docker:
+#         - image: alpine:3.7
+    resource_class: medium
     steps:
       - checkout
       - run:
